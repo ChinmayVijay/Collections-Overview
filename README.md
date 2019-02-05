@@ -64,7 +64,8 @@ Syntax: public interface Collection<E> extends Iterable<E>
       3. NullPointerException: when trying to store a null object.
       4. IllegalArgumentException: if an invalid argument is used.
       5. IllegalStatException: when adding an element to an already full, fixed length collection.
-  Some Methods decalred in Collection are:
+  
+  ## Some Methods decalred in Collection are:
   1. boolean add(Object e)
   2. boolean addAll(Object e)
   3. void clear()
@@ -84,6 +85,36 @@ Syntax: public interface Collection<E> extends Iterable<E>
  17. default Stream<E> stream()
  18. Object[] toArray()
  19. <T> T[] toArray(T array[])
+
+# 8. List Interface : All you need to know:
+syntax: public interface List<E> extends Collection<E>
+  1. It is the child interface of Collection.
+  2. It is an ordered collection that stores a sequence of elements.
+  3. Elements can be inserted or searched by their position in the list using a zero-based index.
+  4. Duplicate elements are allowed. Typically it allows elements such that e1.equals(e2).
+  5. It provides a special iterator called ListIterator, that allows insertion and replacement and bidirectional access.
+  6. Some general exception :
+      1. UnsupportedOperationException - if a collection cannot be modified.
+      2. ClassCastException: if an attempt is made to add an incompatible object.
+      3. NullPointerException: when trying to store a null object.
+      4. IllegalArgumentException: if an invalid argument is used.
+      5. IndexOutOfBoundsException: if an invalid index is used.
+## Methods declared are:
+  1. void add(int index, Object o)
+  2. boolean addAll(int index, Collection<E> c)
+  3. E get(int index)
+  4. int indexOf(object obj)
+  5. int lastIndexOf(Object obj)
+  6. ListIterator<E> listIterator();
+  7. ListIterator<E> listIterator(int index)
+  8. E remove(int index)
+  9. default void replaceAll(UnaryOperator<E> opToApply)
+  10. E set(int index, E object)
+  11. default void sort(Comparator< ? super E> comp)
+  12. List<E> subList(int start, int end)
+  
+  
+  
   
   
 
