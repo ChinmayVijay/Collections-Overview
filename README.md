@@ -92,8 +92,9 @@ syntax: public interface List<E> extends Collection<E>
   2. It is an ordered collection that stores a sequence of elements.
   3. Elements can be inserted or searched by their position in the list using a zero-based index.
   4. Duplicate elements are allowed. Typically it allows elements such that e1.equals(e2).
-  5. It provides a special iterator called ListIterator, that allows insertion and replacement and bidirectional access.
-  6. Some general exception :
+  5. Insertion order is preserved.
+  6. It provides a special iterator called ListIterator, that allows insertion and replacement and bidirectional access.
+  7. Some general exception :
       1. UnsupportedOperationException - if a collection cannot be modified.
       2. ClassCastException: if an attempt is made to add an incompatible object.
       3. NullPointerException: when trying to store a null object.
@@ -113,6 +114,78 @@ syntax: public interface List<E> extends Collection<E>
   11. default void sort(Comparator< ? super E> comp)
   12. List<E> subList(int start, int end)
   
+  # 9. Set Interface : All you need to know:
+  syntax: public interface Set<E> extends Collection<E>
+  1. It is the child interfacce of Collection interface.
+  2. It does not allow duplicate elements. i.e., the lements that satisy e1.equals(e2)
+  3. This interface models the mathematical set abstraction.
+  4. Insertion order is not preserved.
+  5. Some general exceptions are:
+      1. NoSuchElementException - when no items are contained in the invoking set.
+      2. ClassCastException: if an attempt is made to add an incompatible object.
+      3. NullPointerException: when trying to store a null object.
+      4. IllegalArgumentException: if an invalid argument is used.
+  6. No additional methods were added in Set interface.
+  
+  # 10. SortedSet interface: All you need to know:
+  Syntax: public interface SortedSet<E> extends Set<E>
+  1. It is the child interface of Set interface.
+  2. It does not allow any duplicates.
+  3. Elements are inserted based on some sorting order.
+  4. default sorting order is ascending order. Customized sorting order can be provided using an implementation of Comparator<E> interface.
+  5. All elements inserted into the SortedSet must implement the Comparable Interface. As all elements must be mutually comparable.
+  6. This interface is the Set analogue of SortedMap interface.
+  7. Some general exceptions:
+      1. NoSuchElementException - when no items are contained in the invoking set.
+      2. ClassCastException: if an attempt is made to add an incompatible object.
+      3. NullPointerException: when trying to store a null object.
+      4. IllegalArgumentException: if an invalid argument is used.
+  
+  ## Some methods declared are:
+  1. Comparator< ? super E> comparator()
+  2. E first()
+  3. SortedSet<E> headSet(E end) - returns a sortedset containing those elemnts less than end.
+  4. E last() 
+  5. SortedSet<E> subSet(E start, E end) - contains element  between start and end - 1.
+  6. SortedSet<E> tailSet(E start) - contains those elements grater than or equal to start.
+
+# 11. NavigableSet interface : All you need to know: 
+Syntax: public interface Navigable<E> extends SortedSet<E>
+  1. It is the child interface  of SortedSet.
+  2. SortedSet extended with navigation methods to return the closest match for given search targets.
+  
+  
+  
+  ## Methods declared are:
+ 1. E	ceiling(E e) - Returns the least element in this set greater than or equal to the given element, or null if there is no such element.
+2. Iterator<E>	descendingIterator()
+Returns an iterator over the elements in this set, in descending order.
+3. NavigableSet<E>	descendingSet()
+Returns a reverse order view of the elements contained in this set.
+4. E	floor(E e)
+Returns the greatest element in this set less than or equal to the given element, or null if there is no such element.
+5. SortedSet<E>	headSet(E toElement)
+Returns a view of the portion of this set whose elements are strictly less than toElement.
+6. NavigableSet<E>	headSet(E toElement, boolean inclusive)
+Returns a view of the portion of this set whose elements are less than (or equal to, if inclusive is true) toElement.
+7. E	higher(E e)
+Returns the least element in this set strictly greater than the given element, or null if there is no such element.
+8. Iterator<E>	iterator()
+Returns an iterator over the elements in this set, in ascending order.
+9. E	lower(E e)
+Returns the greatest element in this set strictly less than the given element, or null if there is no such element.
+10. E	pollFirst()
+Retrieves and removes the first (lowest) element, or returns null if this set is empty.
+11. E	pollLast()
+Retrieves and removes the last (highest) element, or returns null if this set is empty.
+12. NavigableSet<E>	subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive)
+Returns a view of the portion of this set whose elements range from fromElement to toElement.
+13. SortedSet<E>	subSet(E fromElement, E toElement)
+Returns a view of the portion of this set whose elements range from fromElement, inclusive, to toElement, exclusive.
+14. SortedSet<E>	tailSet(E fromElement)
+Returns a view of the portion of this set whose elements are greater than or equal to fromElement.
+15. NavigableSet<E>	tailSet(E fromElement, boolean inclusive)
+Returns a view of the portion of this set whose elements are greater than (or equal to, if inclusive is true) fromElement.
   
   
   
