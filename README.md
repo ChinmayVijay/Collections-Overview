@@ -187,6 +187,86 @@ Returns a view of the portion of this set whose elements are greater than or equ
 15. NavigableSet<E>	tailSet(E fromElement, boolean inclusive)
 Returns a view of the portion of this set whose elements are greater than (or equal to, if inclusive is true) fromElement.
   
+  # Working with Maps
+  
+  ## What is a map?
+  A map is an object that stores associations between keys and values i.e., key/value pairs.
+  - Both keys and values are objects. For a given key you can find a value.
+  - The keys must be unique
+  - values may be duplicated
+  
+  NOTE:
+  1. Maps don't implement the Iterable Interface. This means you cannot cycle through a map using a for-each style for loop.
+  2. You can't obtain iterator to a map.
+  3. Possible to obtain a collection-view of a map.
+  
+  
+  # 12. Map Interface : All you need to know:
+  Syntax: public interface Map<K,V>
+  1. AN object that maps unique keys to values
+  2. Keys cannot be duplicated. Values may be duplicated.
+  3. Each key can map to atmost one value.
+  4. This interface takes the place of Dictionary class(an abstract class).
+  5. It is not a child interface of Collection Interface.
+  6. Some general exceptions are:
+      1. UnsupportedOperationException - if a collection cannot be modified.
+      2. ClassCastException: if an attempt is made to add an incompatible object.
+      3. NullPointerException: when trying to store a null object.
+      4. IllegalArgumentException: if an invalid argument is used.
+  ## Methods declared are:
+  
+  1. void	clear() - Removes all of the mappings from this map (optional operation).
+  2. default V	compute(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)
+Attempts to compute a mapping for the specified key and its current mapped value (or null if there is no current mapping).
+  3. default V	computeIfAbsent(K key, Function<? super K,? extends V> mappingFunction) - 
+If the specified key is not already associated with a value (or is mapped to null), attempts to compute its value using the given mapping function and enters it into this map unless null.
+  4. default V	computeIfPresent(K key, BiFunction<? super K,? super V,? extends V> remappingFunction) - 
+If the value for the specified key is present and non-null, attempts to compute a new mapping given the key and its current mapped value.
+  5. boolean	containsKey(Object key) - 
+Returns true if this map contains a mapping for the specified key.
+  6. boolean	containsValue(Object value) - 
+Returns true if this map maps one or more keys to the specified value.
+  7. Set<Map.Entry<K,V>>	entrySet() - 
+Returns a Set view of the mappings contained in this map.
+  8. boolean	equals(Object o) - 
+Compares the specified object with this map for equality.
+  9. default void	forEach(BiConsumer<? super K,? super V> action) - 
+Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.
+  10. V	get(Object key) - 
+Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+  11. default V	getOrDefault(Object key, V defaultValue)
+Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.
+  12. int	hashCode()
+Returns the hash code value for this map.
+  13. boolean	isEmpty()
+Returns true if this map contains no key-value mappings.
+  14. Set<K>	keySet()
+Returns a Set view of the keys contained in this map.
+  15. default V	merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)
+If the specified key is not already associated with a value or is associated with null, associates it with the given non-null value.
+  16. V	put(K key, V value)
+Associates the specified value with the specified key in this map (optional operation).
+  17. void	putAll(Map<? extends K,? extends V> m)
+Copies all of the mappings from the specified map to this map (optional operation).
+  18. default V	putIfAbsent(K key, V value)
+If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns null, else returns the current value.
+  19. V	remove(Object key)
+Removes the mapping for a key from this map if it is present (optional operation).
+  20.default boolean	remove(Object key, Object value)
+Removes the entry for the specified key only if it is currently mapped to the specified value.
+  21. default V	replace(K key, V value)
+Replaces the entry for the specified key only if it is currently mapped to some value.
+  22. default boolean	replace(K key, V oldValue, V newValue)
+Replaces the entry for the specified key only if currently mapped to the specified value.
+  23. default void	replaceAll(BiFunction<? super K,? super V,? extends V> function)
+Replaces each entry's value with the result of invoking the given function on that entry until all entries have been processed or the   function throws an exception.
+  24. int	size()
+Returns the number of key-value mappings in this map.
+  25. Collection<V>	values()
+Returns a Collection view of the values contained in this map.
+  
+  
+  
   
   
   
