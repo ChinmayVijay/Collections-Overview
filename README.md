@@ -275,7 +275,7 @@ Syntax: public interface SortedMap<K,V> extends Map<K,V>
       2. NullPointerException: when trying to store a null object.
       3. IllegalArgumentException: if an invalid argument is used.
       4. NoSuchElementException: if the map is empty.
-  5. Methods Declared are:
+  ## Methods Declared are:
     1. Comparator<? super K>	comparator() - 
 Returns the comparator used to order the keys in this map, or null if this map uses the natural ordering of its keys.
     2. Set<Map.Entry<K,V>>	entrySet() - 
