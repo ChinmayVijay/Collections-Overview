@@ -287,6 +287,76 @@ Syntax: public interface SortedMap<K,V> extends Map<K,V>
     9. Collection<V>	values() - Returns a Collection view of the values contained in this map.
     
   ## Path Ahead:Navigable Map->> TreeMap || ConcurrentMap -> ConcurrentNavigableMap -> ConcurrentHashMap >> ConcurrentSkipListMap  
+  # 14 Navigable Map
+  Syntax: public interface NavigableMap<K,V>
+extends SortedMap<K,V>
+1. It is the child interface of SortedMap.
+2. It provides some additional navigation method to return the closest matches for given search targets.
+3. Added in Java Version 1.6
+4. Some general exception :
+      1. ClassCastException: if an attempt is made to add an incompatible object.
+      2. NullPointerException: when trying to store a null object.
+      3. IllegalArgumentException: if an invalid argument is used.
+      
+  # 15. TreeMap Class : All you need to know:
+  Syntax: 
+  public class TreeMap<K,V>
+extends AbstractMap<K,V>
+implements NavigableMap<K,V>, Cloneable, Serializable
+
+1. Red-Black Tree Based NavgiableMap Implementation.
+2. All the elements are added based on default/natural sorting order.
+3. Duplicate Elements are not allowed.
+4. Insertion order is sorted - default or customized.
+5. General Exceptions are:
+      1. ClassCastException: if an attempt is made to add an incompatible object.
+      2. NullPointerException: when trying to store a null object.
+      3. IllegalArgumentException: if an invalid argument is used.
+      4. NoSuchElementException: if the map is empty.
+      
+ ## Methods declared are: 
+    
+     1. Map.Entry<K,V>	ceilingEntry(K key) - Returns a key-value mapping associated with the least key greater than or equal to the given key, or null if there is no such key.
+    2. K	ceilingKey(K key) - Returns the least key greater than or equal to the given key, or null if there is no such key.
+    3. void	clear() - Removes all of the mappings from this map.
+    4. Object	clone() - Returns a shallow copy of this TreeMap instance.
+    5. Comparator<? super K>	comparator() - Returns the comparator used to order the keys in this map, or null if this map uses the natural ordering of its keys.
+    6. boolean	containsKey(Object key) - Returns true if this map contains a mapping for the specified key.
+    7. boolean	containsValue(Object value) - Returns true if this map maps one or more keys to the specified value.
+    8. NavigableSet<K>	descendingKeySet() - Returns a reverse order NavigableSet view of the keys contained in this map.
+    9. NavigableMap<K,V>	descendingMap() - Returns a reverse order view of the mappings contained in this map.
+    10. Set<Map.Entry<K,V>>	entrySet() - Returns a Set view of the mappings contained in this map.
+    11. Map.Entry<K,V>	firstEntry() - Returns a key-value mapping associated with the least key in this map, or null if the map is empty.
+    12. K	firstKey() - Returns the first (lowest) key currently in this map.
+    13. Map.Entry<K,V>	floorEntry(K key) - Returns a key-value mapping associated with the greatest key less than or equal to the given key, or null if there is no such key.
+    14. K	floorKey(K key) - Returns the greatest key less than or equal to the given key, or null if there is no such key.
+    15. void	forEach(BiConsumer<? super K,? super V> action) - Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.
+    16. V	get(Object key) - Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+    17. SortedMap<K,V>	headMap(K toKey) - Returns a view of the portion of this map whose keys are strictly less than toKey.
+    18. NavigableMap<K,V>	headMap(K toKey, boolean inclusive) - Returns a view of the portion of this map whose keys are less than (or equal to, if inclusive is true) toKey.
+    19. Map.Entry<K,V>	higherEntry(K key) - Returns a key-value mapping associated with the least key strictly greater than the given key, or null if there is no such key.
+    20. K	higherKey(K key) - Returns the least key strictly greater than the given key, or null if there is no such key.
+    21. Set<K>	keySet() - Returns a Set view of the keys contained in this map.
+    22.Map.Entry<K,V>	lastEntry() - Returns a key-value mapping associated with the greatest key in this map, or null if the map is empty.
+    23. K	lastKey() - Returns the last (highest) key currently in this map.
+    24. Map.Entry<K,V>	lowerEntry(K key) - Returns a key-value mapping associated with the greatest key strictly less than the given key, or null if there is no such key.
+    25. K	lowerKey(K key) - Returns the greatest key strictly less than the given key, or null if there is no such key.
+    26. NavigableSet<K>	navigableKeySet() - Returns a NavigableSet view of the keys contained in this map.
+    27. Map.Entry<K,V>	pollFirstEntry() - Removes and returns a key-value mapping associated with the least key in this map, or null if the map is empty.
+    28. Map.Entry<K,V>	pollLastEntry() - Removes and returns a key-value mapping associated with the greatest key in this map, or null if the map is empty.
+    29. V	put(K key, V value) - Associates the specified value with the specified key in this map.
+    30. void	putAll(Map<? extends K,? extends V> map) - Copies all of the mappings from the specified map to this map.
+    31. V	remove(Object key) - Removes the mapping for this key from this TreeMap if present.
+    32. V	replace(K key, V value) - Replaces the entry for the specified key only if it is currently mapped to some value.
+    33. boolean	replace(K key, V oldValue, V newValue) - Replaces the entry for the specified key only if currently mapped to the specified value.
+    34. void	replaceAll(BiFunction<? super K,? super V,? extends V> function) - Replaces each entry's value with the result of invoking the given function on that entry until all entries have been processed or the function throws an exception.
+    35. int	size() - Returns the number of key-value mappings in this map.
+    36. NavigableMap<K,V>	subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive) - Returns a view of the portion of this map whose keys range from fromKey to toKey.
+    37. SortedMap<K,V>	subMap(K fromKey, K toKey) - Returns a view of the portion of this map whose keys range from fromKey, inclusive, to toKey, exclusive.
+    38. SortedMap<K,V>	tailMap(K fromKey) - Returns a view of the portion of this map whose keys are greater than or equal to fromKey.
+    39. NavigableMap<K,V>	tailMap(K fromKey, boolean inclusive) - Returns a view of the portion of this map whose keys are greater than (or equal to, if inclusive is true) fromKey.
+    40. Collection<V>	values() - Returns a Collection view of the values contained in this map.
+
   
   
   
