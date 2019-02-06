@@ -276,24 +276,15 @@ Syntax: public interface SortedMap<K,V> extends Map<K,V>
       3. IllegalArgumentException: if an invalid argument is used.
       4. NoSuchElementException: if the map is empty.
   ## Methods Declared are:
-    1. Comparator<? super K>	comparator() - 
-Returns the comparator used to order the keys in this map, or null if this map uses the natural ordering of its keys.
-    2. Set<Map.Entry<K,V>>	entrySet() - 
-Returns a Set view of the mappings contained in this map.
-    3. K	firstKey() - 
-Returns the first (lowest) key currently in this map.
-    4. SortedMap<K,V>	headMap(K toKey) - 
-Returns a view of the portion of this map whose keys are strictly less than toKey.
-    5. Set<K>	keySet() - 
-Returns a Set view of the keys contained in this map.
-    6. K	lastKey() - 
-Returns the last (highest) key currently in this map.
-    7. SortedMap<K,V>	subMap(K fromKey, K toKey) - 
-Returns a view of the portion of this map whose keys range from fromKey, inclusive, to toKey, exclusive.
-    8. SortedMap<K,V>	tailMap(K fromKey) - 
-Returns a view of the portion of this map whose keys are greater than or equal to fromKey.
-    9. Collection<V>	values() - 
-Returns a Collection view of the values contained in this map.
+    1. Comparator<? super K>	comparator() - Returns the comparator used to order the keys in this map, or null if this map uses the natural ordering of its keys.
+    2. Set<Map.Entry<K,V>>	entrySet() - Returns a Set view of the mappings contained in this map.
+    3. K	firstKey() - Returns the first (lowest) key currently in this map.
+    4. SortedMap<K,V>	headMap(K toKey) - Returns a view of the portion of this map whose keys are strictly less than toKey.
+    5. Set<K>	keySet() - Returns a Set view of the keys contained in this map.
+    6. K	lastKey() - Returns the last (highest) key currently in this map.
+    7. SortedMap<K,V>	subMap(K fromKey, K toKey) - Returns a view of the portion of this map whose keys range from fromKey, inclusive, to toKey, exclusive.
+    8. SortedMap<K,V>	tailMap(K fromKey) - Returns a view of the portion of this map whose keys are greater than or equal to fromKey.
+    9. Collection<V>	values() - Returns a Collection view of the values contained in this map.
   
   
   
